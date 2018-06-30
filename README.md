@@ -21,7 +21,7 @@ If not specified, the default values there will be used.
 ```
   cd ~/mountainlab/packages/mountainsort
   rm -r packages
-  git clone https://github.com/aafenton/MountainSort.git  
+  git clone https://github.com/aafenton/MountainSort.git packages
   ./compile_components.sh
 ```
 - Add path, in my case I do the following
