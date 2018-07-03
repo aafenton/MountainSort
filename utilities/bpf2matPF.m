@@ -1,4 +1,4 @@
-function retVal = bpf2matPF(filename)
+function retVal = bpf2matPF(filename,dr_out)
 %converts BPF into Matlab file
 % (C) Dino Dvorak 2015
 % dino@indus3.net
@@ -596,10 +596,9 @@ fclose(fid);
 disp('saving data...');
 [~,name,ext] = fileparts(filename);
 fnOut = [name '.mat'];
-dr = '/Users/hupeiyao/Movies/PH/DATA/';
-if exist(dr,'dir') == 0; mkdir(dr); end
+if exist(dr_out,'dir') == 0; mkdir(dr_out); end
 
-save ([dr fnOut], 'tetrodeData', 'tetrodeTimestamp','tetrodeChannel','tetrodeUnit',...
+save ([dr_out fnOut], 'tetrodeData', 'tetrodeTimestamp','tetrodeChannel','tetrodeUnit',...
     'tetrodeFS', 'tetrodeSamplesPerBlock', 'roomTimeStamps', 'roomXY');
 
 retVal = 1;
